@@ -29,7 +29,7 @@ def create_app(console):
 
   @app.route('/upload', methods=['PUT'])
   def upload():
-    file = NamedTemporaryFile()
+    file = NamedTemporaryFile(dir='/upload')
     try:
       data = request.get_data()
       print(f'data: {data}\n')

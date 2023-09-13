@@ -10,7 +10,7 @@ FROM python:latest
 RUN pip install import_db
 
 WORKDIR  /var/teamhack
-VOLUME ["/var/teamhack"]
+VOLUME ["/var/teamhack/upload"]
 
 ENTRYPOINT [         \
   "/usr/bin/env",    \
