@@ -11,7 +11,7 @@ def import_daemon(console, filename):
   #out = console.read()
   print(f'out {type(out)}: {out}\n')
   # TODO
-  timeout = 30
+  timeout = 300
   counter = 0
   while counter < timeout:
     out += console.read()['data']
@@ -31,7 +31,7 @@ def create_app(console):
     file = NamedTemporaryFile()
     try:
       data = request.get_data()
-      print(f'data: {data}')
+      print(f'data: {data}\n')
       file.write(data)
       file.flush()
       #file.seek(0)
