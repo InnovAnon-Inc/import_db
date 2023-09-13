@@ -8,6 +8,7 @@ def import_daemon(console, filename):
   console.write(f"db_import {filename}\n")
   #out = console.read()['data']
   out = console.read()
+  print(out)
   print(type(out))
   # TODO
   timeout = 30
