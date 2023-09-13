@@ -1,6 +1,7 @@
-from tempfile import NamedTemporaryFile
+from flask                import Flask, request
 from pymetasploit3.msfrpc import MsfRpcClient, MsfRpcMethod
-from flask import Flask, request
+from tempfile             import NamedTemporaryFile
+from time                 import sleep
 
 def import_daemon(console, filename):
   console.read()
