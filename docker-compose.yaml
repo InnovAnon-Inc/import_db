@@ -19,7 +19,7 @@ services:
     #  retries:       10
     depends_on:
       msfrpcd:
-        condition: service_started
+        condition: service_healthy
       syslog:
         condition: service_started
 
