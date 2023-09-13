@@ -13,7 +13,7 @@ def import_daemon(console, filename):
   while counter < timeout:
     out += console.read()['data']
     if "Nmap done" in out: break
-    time.sleep(1)
+    sleep(1)
     counter += 1
   return out
 
