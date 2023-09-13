@@ -1,4 +1,4 @@
-name: Hack the Box Team Support Services
+name: MSF RPCd-backed import_db as a REST API
 permissions:
   contents: write
 
