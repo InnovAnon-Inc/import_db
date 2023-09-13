@@ -27,7 +27,7 @@ def create_app(console):
       file.write(request.get_data())
       file.flush()
       #file.seek(0)
-      import_daemon(console, file.name)
+      out = import_daemon(console, file.name)
       return out, 200
     finally: file.close()
 
