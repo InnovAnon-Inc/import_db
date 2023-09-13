@@ -34,7 +34,7 @@ def start_server(password, username, upstreamh='0.0.0.0', upstreamp=55553, host=
   c_id = client.call(MsfRpcMethod.ConsoleCreate)['id']
   console = client.consoles.console(c_id)
   app = create_app(console, **kwargs)
-  app.run(debug=True, host=server, port=port, *args)
+  app.run(debug=True, server=host, port=port, *args)
 
 # https://www.easydevguide.com/posts/curl_upload_flask
 
