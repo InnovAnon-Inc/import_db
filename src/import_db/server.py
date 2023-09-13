@@ -6,17 +6,18 @@ from time                 import sleep
 def import_daemon(console, filename):
   console.read()
   console.write(f"db_import {filename}\n")
-  #out = console.read()['data']
-  out = console.read()[1]['data']
+  out = console.read()['data']
+  #out = console.read()[1]['data']
   #out = console.read()
   print(f'out {type(out)}: {out}\n')
   # TODO
   timeout = 30
   counter = 0
   while counter < timeout:
-    #out += console.read()['data']
-    out += console.read()[1]['data']
+    out += console.read()['data']
+    #out += console.read()[1]['data']
     #out += console.read()
+    print(f'out {type(out)}: {out}\n')
     if "Nmap done" in out: break
     sleep(1)
     counter += 1
