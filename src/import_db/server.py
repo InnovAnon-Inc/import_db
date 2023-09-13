@@ -6,12 +6,15 @@ from time                 import sleep
 def import_daemon(console, filename):
   console.read()
   console.write(f"db_import {filename}\n")
-  out = console.read()['data']
+  #out = console.read()['data']
+  out = console.read()
+  print(type(out))
   # TODO
   timeout = 30
   counter = 0
   while counter < timeout:
-    out += console.read()['data']
+    #out += console.read()['data']
+    out += console.read()
     if "Nmap done" in out: break
     sleep(1)
     counter += 1
@@ -24,7 +27,9 @@ def create_app(console):
   def upload():
     file = NamedTemporaryFile()
     try:
-      file.write(request.get_data())
+      data = request.get_data()
+      print(f'data: {data}')
+      file.write(data)
       file.flush()
       #file.seek(0)
       out = import_daemon(console, file.name)
