@@ -8,7 +8,7 @@ services:
       - "0.0.0.0:65432:65432/tcp"
     volumes:
       - import-db:/var/teamhack/upload:rw
-      - syslog-client:/etc/rsyslog.d:ro
+      #- syslog-client:/etc/rsyslog.d:ro
     restart:         always
     #command: ["-S", "-U", $USER, "-P", $PASSWORD]
     #network_mode:    service:vpn-s1
@@ -20,8 +20,12 @@ services:
     depends_on:
       msfrpcd:
         condition: service_healthy
-      syslog:
-        condition: service_started
+      #syslog:
+      #  condition: service_started
+    # TODO
+    #networks:
+    #  network:
+    #    ipv4_address: 10.5.0.7
 
 volumes:
   import-db:
