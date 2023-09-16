@@ -5,7 +5,7 @@ services:
     image: innovanon/import_db
     container_name:  import_db
     ports:
-      - "0.0.0.0:65432:0.0.0.0:65432/tcp"
+      - "0.0.0.0:65432:65432/tcp"
     volumes:
       - import-db:/var/teamhack/upload:rw
       - syslog-client:/etc/rsyslog.d:ro
