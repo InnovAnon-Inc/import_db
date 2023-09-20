@@ -20,8 +20,8 @@ services:
     depends_on:
       msfrpcd:
         condition: service_healthy
-      #syslog:
-      #  condition: service_started
+      syslog:
+        condition: service_started
     # TODO
     #networks:
     #  network:
@@ -29,4 +29,5 @@ services:
 
 volumes:
   import-db:
+    #external: true
 
