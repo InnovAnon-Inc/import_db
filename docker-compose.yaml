@@ -29,5 +29,5 @@ services:
 
 volumes:
   import-db:
-    #external: true
+    external: true
 
