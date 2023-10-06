@@ -22,7 +22,7 @@ def import_daemon(console, filename):
     if "No such file" in out: return out, 201
     sleep(1)
     counter += 1
-  return out, 200
+  return out #, 200
 
 def create_app(console):
   app = Flask(__name__)
