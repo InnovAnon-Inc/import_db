@@ -12,6 +12,7 @@ RUN pip install import_db
 WORKDIR  /var/teamhack
 VOLUME ["/var/teamhack/upload"]
 
+RUN test -x /usr/bin/env
 ENTRYPOINT [         \
   "/usr/bin/env",    \
   "python",          \
