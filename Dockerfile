@@ -13,6 +13,7 @@ WORKDIR  /var/teamhack
 VOLUME ["/var/teamhack/upload"]
 
 RUN test -x /usr/bin/env
+RUN command -v python
 ENTRYPOINT [         \
   "/usr/bin/env",    \
   "python",          \
