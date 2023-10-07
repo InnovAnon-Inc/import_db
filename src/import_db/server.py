@@ -10,8 +10,7 @@ def import_daemon(console, filename):
   #out = console.read()[1]['data']
   #out = console.read()
   print(f'out {type(out)}: {out}\n')
-  # TODO
-  timeout = 300
+  timeout = 300 # TODO
   counter = 0
   while counter < timeout:
     out += console.read()['data']
@@ -19,10 +18,11 @@ def import_daemon(console, filename):
     #out += console.read()
     print(f'out {type(out)}: {out}\n')
     #if "Nmap done" in out: break
-    if "No such file" in out: return out, 201
+    if "No such file"          in out: return out, 201
+    if "Successfully imported" in out: return out
     sleep(1)
     counter += 1
-  return out #, 200
+  return out, 204
 
 def create_app(console):
   app = Flask(__name__)
